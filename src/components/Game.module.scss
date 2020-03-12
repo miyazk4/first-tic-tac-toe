@@ -1,0 +1,63 @@
+$flex: flex;
+$center: center;
+$border: 1px;
+$travelTime: 24px;
+$counter: my-awesome-counter;
+$statColor: #5dd9a7;
+$statFont: Verdana;
+
+.game {
+  height:100%;
+  display:$flex;
+  flex-direction:column;
+  align-items:$center;
+  justify-content:$center;
+}
+
+.gameInfo {
+  display:$flex;
+  flex-direction:column;
+  text-align:$center;
+  border:$border solid #eee;
+  background-color: rgba(180,180,180, 0.2);
+  margin-top:50px;
+  min-width:20%;
+}
+
+.status {
+  font-size:50px;
+  color:$statColor;
+}
+
+.travelList{
+  list-style:none;
+  counter-reset: $counter;
+  width:100%;
+  padding:0;
+}
+
+.travelList .travelItem{
+  counter-increment: $counter;
+  margin-bottom:15px;
+}
+
+.travelList .travelItem::before{
+  content: counter($counter) ". ";
+  color:$statColor;
+  font-weight: bold;
+  font-size:$travelTime;
+  font-family:$statFont; 
+}
+
+.travelItem .btn{
+  font-family:$statFont;
+  padding:0;
+  border:0;
+  background-color:$border solid $statColor;
+  font-size:$travelTime;
+}
+
+.btn.active{
+  color:red;
+}
+

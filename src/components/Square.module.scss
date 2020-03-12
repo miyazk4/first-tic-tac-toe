@@ -1,0 +1,53 @@
+$border: 1px;
+$center: center;
+$sqrMeasures: 200px;
+
+.square {
+  background: #fff;
+  border: $border solid #999;
+  display: flex;
+  align-items: $center;
+  justify-content: $center;
+  font-size: 120px;
+  
+  line-height: $sqrMeasures;
+  height: $sqrMeasures;
+  margin-right: -$border;
+  margin-top: -$border;
+  padding: 0;
+  width: $sqrMeasures;
+
+  &:focus {
+    outline: none;
+  }
+
+  &.x {
+    color:#43d9d4;
+  }
+
+  &.o {
+    color:#a81123;
+  }
+  
+  /*
+
+  Mais maneiras de passar
+
+  &:global{
+    &.X{
+      background-color: rosybrown;
+    }
+    &.O{
+      background-color: salmon;
+    }
+  }
+  &[data-value='X']{
+    border: 5px solid red;
+  } 
+
+  */
+
+  &.winner {
+    background-color:grey;
+  }
+}
